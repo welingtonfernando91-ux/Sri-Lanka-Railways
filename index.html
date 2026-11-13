@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sri Lanka Railways</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            🚆 Sri Lanka Railways
+        </div>
+
+        
+<nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#schedule">Train Schedule</a>
+    <a href="#stations">Stations</a>
+    <a href="#ticket-prices">Ticket Prices</a>
+    <a href="#directory">Telephone Directory</a>
+    <a href="index.html#contact-form">Contact</a>
+</nav>
+
+        <div class="language">
+            <button>EN</button>
+            <button>தமிழ்</button>
+            <button>සිංහල</button>
+        </div>
+
+    </header>
+
+    <main class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Sri Lanka Railways</h1>
+
+        <h2>Welcome to Sri Lanka Railways</h2>
+
+        <p>Your Journey, Our Priority</p>
+
+        
+<a href="#train-search" class="hero-button">
+    Plan Your Journey
+</a>
+
+
+    </div>
+
+</main>
+<section class="train-search" id="train-search">
+
+<h2>Find Your Train</h2>
+
+    <p>Search trains and plan your journey</p>
+
+    <div class="search-box">
+
+        <div class="input-group">
+            <label>From Station</label>
+            
+<select id="fromStation">
+    <option value="">Select Departure</option>
+<option value="Colombo Fort">Colombo Fort</option>
+<option value="Gampaha">Gampaha</option>
+<option value="Polgahawela">Polgahawela</option>
+<option value="Maho">Maho</option>
+<option value="Kurunegala">Kurunegala</option>
+<option value="Anuradhapura">Anuradhapura</option>
+<option value="Madawachchiya">Madawachchiya</option>
+<option value="Cheddikulam">Cheddikulam</option>
+<option value="Madu Road">Madu Road</option>
+<option value="Murunkan">Murunkan</option>
+<option value="Mannar">Mannar</option>
+<option value="Pesalai">Pesalai</option>
+<option value="Talaimannar">Talaimannar</option>
+<option value="Talaimannar Pier">Talaimannar Pier</option>
+<option value="Vavuniya">Vavuniya</option>
+<option value="Kilinochchi">Kilinochchi</option>
+<option value="Kodikamam">Kodikamam</option>
+<option value="Chavakachcheri">Chavakachcheri</option>
+<option value="Jaffna">Jaffna</option>
+<option value="Kankesanthurai">Kankesanthurai (KKS)</option>
+<option value="Talaimannar Pier">Talaimannar Pier</option>
+<option value="Mount Lavinia">Mount Lavinia</option>
+<option value="Moratuwa">Moratuwa</option>
+</select>
+
+        </div>
+        
+        <div class="input-group">
+            <label>To Station</label>
+          <select id="toStation">
+                <option value="">Select Departure</option>
+<option value="Colombo Fort">Colombo Fort</option>
+<option value="Gampaha">Gampaha</option>
+<option value="Polgahawela">Polgahawela</option>
+<option value="Maho">Maho</option>
+<option value="Kurunegala">Kurunegala</option>
+<option value="Anuradhapura">Anuradhapura</option>
+<option value="Madawachchiya">Madawachchiya</option>
+<option value="Cheddikulam">Cheddikulam</option>
+<option value="Madu Road">Madu Road</option>
+<option value="Murunkan">Murunkan</option>
+<option value="Mannar">Mannar</option>
+<option value="Pesalai">Pesalai</option>
+<option value="Talaimannar">Talaimannar</option>
+<option value="Talaimannar Pier">Talaimannar Pier</option>
+<option value="Vavuniya">Vavuniya</option>
+<option value="Kilinochchi">Kilinochchi</option>
+<option value="Kodikamam">Kodikamam</option>
+<option value="Chavakachcheri">Chavakachcheri</option>
+<option value="Jaffna">Jaffna</option>
+<option value="Kankesanthurai">Kankesanthurai (KKS)</option>
+<option value="Talaimannar Pier">Talaimannar Pier</option>
+<option value="Mount Lavinia">Mount Lavinia</option>
+<option value="Moratuwa">Moratuwa</option>
+            </select>
+        </div>
+
+
+        <div class="input-group">
+            <label>Travel Date</label>
+            <input type="date">
+        </div>
+
+        <button class="search-button">Search Train</button>
+
+    </div>
+    <div id="search-result"></div>
+    
+   </section>
+
+
+<!-- TRAIN SCHEDULE SECTION -->
+
+<section class="schedule-section" id="schedule">
+
+    <h2>Train Schedule</h2>
+    <p>Explore Train Timings Across Sri Lanka</p>
+
+    <div class="schedule-container">
+
+        <!-- TALAIMANNAR EXPRESS 5004 -->
+        <div class="schedule-card">
+            <h3>🚆 Talaimannar Express</h3>
+            <p>Train No: 5004</p>
+            <p>From: Talaimannar Pier</p>
+            <p>To: Colombo Fort</p>
+            <p>Departure: 04:10 AM</p>
+            <p>Arrival: 10:44 AM</p>
+            <span>Express Train</span>
+            <button class="view-details" type="button">View Details</button>
+        </div>
+
+<div class="train-selector">
+
+    <h3 class="selector-title">SELECT YOUR TRAIN</h3>
+    <p class="selector-subtitle">Choose a train to explore its schedule</p>
+
+    <div class="train-buttons">
+        <button type="button" data-train="5003">5003</button>
+        <button type="button" data-train="5004">5004</button>
+        <button type="button" data-train="4077">4077</button>
+        <button type="button" data-train="4078">4078</button>
+        <button type="button" data-train="4021">4021</button>
+        <button type="button" data-train="4022">4022</button>
+        <button type="button" data-train="4089">4089</button>
+        <button type="button" data-train="4090">4090</button>
+    </div>
+
+    <p class="selector-hint">Select your preferred train number</p>
+    <div id="selectedScheduleDisplay"></div>
+
+</div>
+
+
+        <!-- TALAIMANNAR EXPRESS 5003 -->
+        <div class="schedule-card">
+            <h3>🚆 Talaimannar Express</h3>
+            <p>Train No: 5003</p>
+            <p>From: Colombo Fort</p>
+            <p>To: Talaimannar Pier</p>
+            <p>Departure: 03:50 PM</p>
+            <p>Arrival: 10:28 PM</p>
+            <span>Express Train</span>
+            <button class="view-details" type="button">View Details</button>
+        </div>
+
+        <!-- YAL DEVI 4078 -->
+        <div class="schedule-card">
+            <h3>🚆 Yal Devi Express</h3>
+            <p>Train No: 4078</p>
+            <p>From: Kankesanthurai (KKS)</p>
+            <p>To: Colombo Fort</p>
+            <p>Departure: 10:30 AM</p>
+            <p>Arrival: 07:03 PM</p>
+            <span>Express Train</span>
+            <button class="view-details" type="button">View Details</button>
+        </div>
+
+        <!-- YAL DEVI 4077 -->
+        <div class="schedule-card">
+            <h3>🚆 Yal Devi Express</h3>
+            <p>Train No: 4077</p>
+            <p>From: Colombo Fort</p>
+            <p>To: Kankesanthurai (KKS)</p>
+            <p>Departure: 06:40 AM</p>
+            <p>Arrival: 02:33 PM</p>
+            <span>Express Train</span>
+            <button class="view-details" type="button">View Details</button>
+        </div>
+
+        <!-- A/C INTERCITY 4022 -->
+        <div class="schedule-card">
+            <h3>🚆 A/C Intercity Express</h3>
+            <p>Train No: 4022</p>
+            <p>From: Kankesanthurai (KKS)</p>
+            <p>To: Mount Lavinia</p>
+            <p>KKS Departure: 01:50 PM</p>
+            <p>Fort Arrival: 08:33 PM</p>
+            <p>Fort Departure: 08:34 PM</p>
+            <p>MLV Arrival: 08:58 PM</p>
+            <span>A/C Intercity</span>
+            <button class="view-details" type="button">View Details</button>
+        </div>
+
+        <!-- A/C INTERCITY 4021 -->
+        <div class="schedule-card">
+            <h3>🚆 A/C Intercity Express</h3>
+            <p>Train No: 4021</p>
+            <p>From: Mount Lavinia</p>
+            <p>To: Kankesanthurai (KKS)</p>
+            <p>MLV Departure: 05:15 AM</p>
+            <p>Fort Arrival: 05:39 AM</p>
+            <p>Fort Departure: 05:45 AM</p>
+            <p>KKS Arrival: 12:14 PM</p>
+            <span>A/C Intercity</span>
+            <button class="view-details" type="button">View Details</button>
+        </div>
+
+        <!-- JAFFNA NIGHT MAIL 4090 -->
+        <div class="schedule-card">
+            <h3>🚆 Jaffna Night Mail</h3>
+            <p>Train No: 4090</p>
+            <p>From: Kankesanthurai (KKS)</p>
+            <p>To: Moratuwa (MRT)</p>
+            <p>KKS Departure: 08:00 PM</p>
+            <p>Fort Arrival: 04:44 AM</p>
+            <p>Fort Departure: 04:46 AM</p>
+            <p>MRT Arrival: 05:24 AM</p>
+            <span>Night Mail</span>
+            <button class="view-details" type="button">View Details</button>
+        </div>
+
+        <!-- JAFFNA NIGHT MAIL 4089 -->
+        <div class="schedule-card">
+            <h3>🚆 Jaffna Night Mail</h3>
+            <p>Train No: 4089</p>
+            <p>From: Moratuwa (MRT)</p>
+            <p>To: Kankesanthurai (KKS)</p>
+            <p>MRT Departure: 06:55 PM</p>
+            <p>Fort Arrival: 07:29 PM</p>
+            <p>Fort Departure: 08:00 PM</p>
+            <p>KKS Arrival: 04:24 AM</p>
+            <span>Night Mail</span>
+            <button class="view-details" type="button">View Details</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- POPULAR STATIONS -->
+
+<section class="stations-section" id="stations"></section>
+
+    <div class="stations-heading">
+    <h2>Popular Railway Stations</h2>
+    <p>Explore Beautiful Railway Destinations</p>
+    </div>
+<div class="stations-container"></div>
+        <div class="station-card">
+            <h3>Colombo Fort</h3>
+            <p>Western Province</p>
+        </div>
+
+        <div class="station-card">
+            <h3>Kandy</h3>
+            <p>Central Province</p>
+        </div>
+
+        <div class="station-card">
+            <h3>Ella</h3>
+            <p>Uva Province</p>
+        </div>
+
+        <div class="station-card">
+            <h3>Jaffna</h3>
+            <p>Northern Province</p>
+        </div>
+
+    </div>
+
+</section>
+<!-- STATION TELEPHONE DIRECTORY -->
+
+<section class="directory-section" id="directory">
+
+    <h2>Railway Station Telephone Directory</h2>
+
+    <p>Find Railway Station Contact Numbers</p>
+
+    <div class="directory-search">
+
+    <input
+        type="text"
+        id="stationSearch"
+        placeholder="Search Railway Station..."
+    >
+
+    <select id="lineFilter">
+        <option value="all">All Railway Lines</option>
+        <option value="Northern Line">Northern Line</option>
+        <option value="Talaimannar Line">Talaimannar Line</option>
+    </select>
+
+</div>
+
+    <div id="directoryResults">
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="features-section">
+
+
+    <h2>Why Choose Sri Lanka Railways?</h2>
+
+    <p>Enjoy a Comfortable and Memorable Journey</p>
+
+    <div class="features-container">
+
+        <div class="feature-card">
+            <h3>🚆 Comfortable Travel</h3>
+            <p>Enjoy relaxing journeys across beautiful Sri Lanka.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🌄 Scenic Routes</h3>
+            <p>Discover breathtaking views along the railway lines.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🎫 Easy Journey Planning</h3>
+            <p>Plan your railway journey with ease.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="ticket-section" id="ticket-prices">
+
+<h2>RESERVATION TICKET FARE</h2>
+
+    <p>Choose the Right Class for Your Journey</p>
+
+    <div class="ticket-container">
+
+        <div class="ticket-card" id="firstClassCard">
+            <h3>🥇 First Class</h3>
+            <p>Comfortable travel experience</p>
+            <button type="button" id="premiumClassButton">
+    Premium Class
+</button>
+        </div>
+
+        <div class="ticket-card">
+            <h3>🥈 Second Class</h3>
+            <p>Comfortable standard seating</p>
+            <span>Standard Class</span>
+        </div>
+
+        <div class="ticket-card">
+            <h3>🥉 Third Class</h3>
+            <p>Budget-friendly travel option</p>
+            <span>Economy Class</span>
+        </div>
+
+    </div>
+
+    <p class="ticket-note">
+        Please check official railway sources for current ticket fares.
+    </p>
+
+</section>
+
+
+<!-- RESERVATION FARE SECTION -->
+
+<section class="reservation-fare" id="reservation-fare">
+
+  <h2>RESERVATION TICKET FARE</h2>
+ 
+ <div class="fare-inputs">
+
+        <!-- FROM STATION -->
+
+        <div class="input-group">
+
+            <label>From Station</label>
+
+            <select id="fareFrom">
+
+                <option value="">Select Station</option>
+                <option value="Talaimannar Pier">Talaimannar Pier</option>
+                <option value="Mannar">Mannar</option>
+                <option value="Madawachchiya">Madawachchiya</option>
+                <option value="Anuradhapura">Anuradhapura</option>
+                <option value="Maho">Maho</option>
+                <option value="Kurunegala">Kurunegala</option>
+                <option value="Polgahawela">Polgahawela</option>
+                <option value="Gampaha">Gampaha</option>
+                <option value="Colombo Fort">Colombo Fort</option>
+
+            </select>
+
+        </div>
+
+        <!-- TO STATION -->
+
+        <div class="input-group">
+
+            <label>To Station</label>
+
+            <select id="fareTo">
+
+                <option value="">Select Station</option>
+                <option value="Talaimannar Pier">Talaimannar Pier</option>
+                <option value="Mannar">Mannar</option>
+                <option value="Madawachchiya">Madawachchiya</option>
+                <option value="Anuradhapura">Anuradhapura</option>
+                <option value="Maho">Maho</option>
+                <option value="Kurunegala">Kurunegala</option>
+                <option value="Polgahawela">Polgahawela</option>
+                <option value="Gampaha">Gampaha</option>
+                <option value="Colombo Fort">Colombo Fort</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- FARE RESULT -->
+
+   <button type="button" id="calculateFareButton" class="calculate-fare-btn">
+    Calculate Fare
+</button>
+    <div class="fare-result" id="fare-result"></div>
+
+</section>
+
+    
+<!-- CONTACT SECTION -->
+
+<section class="contact-section" id="contact-form">
+
+    <h2>Contact Us</h2>
+
+    <p>We Are Here to Help You</p>
+
+    <div class="contact-container">
+
+        <form class="contact-form">
+
+            <input type="text"
+                   placeholder="Your Name"
+                   required>
+
+            <input type="email"
+                   placeholder="Your Email"
+                   required>
+
+            <input type="text"
+                   placeholder="Subject"
+                   required>
+
+            <textarea
+                placeholder="Your Message"
+                rows="5"
+                required></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+<!-- FOOTER SECTION -->
+
+<footer class="footer" id="contact">
+
+    <h2>🚆 Sri Lanka Railways</h2>
+
+    <p>Your Journey, Our Priority</p>
+
+    <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#schedule">Train Schedule</a>
+    <a href="#stations">Stations</a>
+    <a href="#contact-form">Contact</a>
+</div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Sri Lanka Railways. All Rights Reserved.</p>
+    </div>
+
+</footer>
+<div class="train-modal" id="trainModal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 id="modalTitle">Train Details</h2>
+        <div id="modalDetails"></div>
+    </div>
+</div>
+    <script src="script.js"></script>
+
+</body>
+
+   
+
+</html>
