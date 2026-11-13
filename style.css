@@ -940,73 +940,7 @@ box-shadow: 0 5px 12px rgba(0,0,0,0.2);
     box-shadow: 0 0 8px rgba(212,175,55,0.3);
 }
 
-#directoryResults {
-    max-width: 1000px;
-    margin: auto;
-}
 
-@media (max-width: 768px) {
-    .directory-section {
-        padding: 45px 15px;
-    }
-
-    .directory-section h2 {
-        font-size: 25px;
-    }
-}
-/* DIRECTORY STATION CARDS */
-
-.directory-card {
-    background: #ffffff;
-    padding: 22px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    text-align: left;
-    border-left: 4px solid #d4af37;
-}
-
-.directory-card h3 {
-    color: #0b2545;
-    font-size: 18px;
-    margin: 0;
-}
-
-.directory-card p {
-    color: #666;
-    font-size: 13px;
-    margin: 5px 0 0;
-}
-
-.directory-phone {
-    margin-left: auto;
-}
-
-.directory-phone a {
-    color: #0b2545;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.directory-phone a:hover {
-    color: #d4af37;
-}
-
-.directory-phone span {
-    color: #888;
-    font-size: 14px;
-}
-
-@media (max-width: 768px) {
-    .directory-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
 #search-result h3 {
     color: #0b2545;
     font-size: 26px;
@@ -1721,4 +1655,211 @@ box-shadow: 0 5px 12px rgba(0,0,0,0.2);
     max-width: 360px;
     margin: 0 auto !important;
     box-sizing: border-box;
+}
+/* =====================================
+   SRI LANKA RAILWAYS
+   FINAL PREMIUM TELEPHONE DIRECTORY
+===================================== */
+
+.directory-section {
+    width: 92%;
+    max-width: 1250px;
+    margin: 55px auto;
+    padding: 55px 30px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #081a30, #102b4b, #081a30);
+    border: 2px solid #d4af37;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.directory-section h2 {
+    color: #f5d76e;
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 12px;
+}
+
+.directory-section > p {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* SEARCH AND LINE FILTER */
+
+.directory-search {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto 35px;
+    padding: 20px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid #d4af37;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.directory-search input,
+.directory-search select {
+    flex: 1 1 250px;
+    min-width: 0;
+    width: 100%;
+    padding: 15px;
+    background: #ffffff;
+    color: #0b2545;
+    border: 2px solid #d4af37;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.directory-search input:focus,
+.directory-search select:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
+}
+
+/* STATION CARD GRID */
+
+#directoryResults {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* INDIVIDUAL STATION CARD */
+
+#directoryResults .directory-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 24px;
+    box-sizing: border-box;
+
+    background: linear-gradient(145deg, #ffffff, #edf1f6);
+    border: 1px solid #d4af37;
+    border-left: 5px solid #d4af37;
+    border-radius: 15px;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+#directoryResults .directory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(212,175,55,0.25);
+}
+
+#directoryResults .directory-card h3 {
+    color: #0b2545;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+#directoryResults .directory-card > p {
+    display: inline-block;
+    color: #8a6810;
+    background: #fff5d6;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* PHONE NUMBER - INSIDE CARD */
+
+#directoryResults .directory-phone {
+    display: block;
+    width: 100%;
+    margin: 5px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid #d4af37;
+    color: #0b2545;
+    font-size: 15px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+    box-sizing: border-box;
+}
+
+#directoryResults .directory-phone a {
+    display: inline-block;
+    max-width: 100%;
+    color: #0b2545;
+    font-weight: 800;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+#directoryResults .directory-phone a:hover {
+    color: #a47b00;
+    text-decoration: underline;
+}
+
+#directoryResults .directory-phone span {
+    color: #777777;
+    font-size: 14px;
+}
+
+/* NO STATION FOUND */
+
+#directoryResults > p {
+    grid-column: 1 / -1;
+    color: #ffffff;
+    text-align: center;
+    font-size: 17px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    #directoryResults {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .directory-section {
+        width: 94%;
+        padding: 35px 15px;
+        margin: 30px auto;
+    }
+
+    .directory-section h2 {
+        font-size: 24px;
+    }
+
+    .directory-search {
+        padding: 14px;
+    }
+
+    .directory-search input,
+    .directory-search select {
+        flex: 1 1 100%;
+    }
+
+    #directoryResults {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
 }
