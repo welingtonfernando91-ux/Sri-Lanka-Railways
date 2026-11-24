@@ -1325,24 +1325,24 @@ function openStationGallery(station) {
         "colombo-fort": {
     title: "Colombo Fort Railway Station",
     photos: [
-        "image/colombo_fort_01.jpg",
-        "image/colombo_fort_02.jpg",
-        "image/colombo_fort_03.jpg",
-        "image/colombo_fort_04.jpg"
+        "images/colombo_fort_01.jpg",
+        "images/colombo_fort_02.jpg",
+        "images/colombo_fort_03.jpg",
+        "images/colombo_fort_04.jpg"
     ]
 },
 
 "kandy": {
     title: "Kandy Railway Station",
     photos: [
-        "image/kandy_01.jpg",
-        "image/kandy_02.jpg",
-        "image/kandy_03.jpg",
-        "image/kandy_04.jpg",
-        "image/kandy_05.jpg",
-        "image/kandy_06.jpg",
-        "image/kandy_07.jpg",
-        "image/kandy_08.jpg"
+        "images/kandy_01.jpg",
+        "images/kandy_02.jpg",
+        "images/kandy_03.jpg",
+        "images/kandy_04.jpg",
+        "images/kandy_05.jpg",
+        "images/kandy_06.jpg",
+        "images/kandy_07.jpg",
+        "images/kandy_08.jpg"
     ]
 },
 
@@ -1350,30 +1350,30 @@ function openStationGallery(station) {
 "ella": {
     title: "Ella Railway Station",
     photos: [
-        "image/ella_01.jpg",
-        "image/ella_02.jpg",
-        "image/ella_03.jpg",
-        "image/ella_04.jpg",
-        "image/ella_05.jpg",
-        "image/ella_06.jpg",
-        "image/ella_07.jpg",
-        "image/ella_08.jpg"
+        "images/ella_01.jpg",
+        "images/ella_02.jpg",
+        "images/ella_03.jpg",
+        "images/ella_04.jpg",
+        "images/ella_05.jpg",
+        "images/ella_06.jpg",
+        "images/ella_07.jpg",
+        "images/ella_08.jpg"
     ]
 },
 
 "jaffna": {
     title: "Jaffna Railway Station",
     photos: [
-        "image/jaffna_01.jpg",
-        "image/jaffna_02.jpg",
-        "image/jaffna_03.jpg",
-        "image/jaffna_04.jpg",
-        "image/jaffna_05.jpg",
-        "image/jaffna_06.jpg",
-        "image/jaffna_07.jpg",
-        "image/jaffna_08.jpg",
-        "image/jaffna_09.jpg",
-        "image/jaffna_10.jpg"
+        "images/jaffna_01.jpg",
+        "images/jaffna_02.jpg",
+        "images/jaffna_03.jpg",
+        "images/jaffna_04.jpg",
+        "images/jaffna_05.jpg",
+        "images/jaffna_06.jpg",
+        "images/jaffna_07.jpg",
+        "images/jaffna_08.jpg",
+        "images/jaffna_09.jpg",
+        "images/jaffna_10.jpg"
     ]
 }
     };
