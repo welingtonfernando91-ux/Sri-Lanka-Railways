@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sri Lanka Railways - Admin Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+
+        header {
+            background: #0b2545;
+            color: white;
+            padding: 22px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            margin: 0;
+        }
+
+        .logout-btn {
+            background: #d4af37;
+            color: #0b2545;
+            border: none;
+            padding: 11px 22px;
+            border-radius: 7px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 35px 5%;
+        }
+
+        .welcome {
+            color: #0b2545;
+            margin-bottom: 25px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #d4af37;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .card h3 {
+            color: #0b2545;
+            margin-top: 0;
+        }
+
+        .card p {
+            color: #777;
+        }
+
+        .messages-section {
+            background: white;
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .messages-section h2 {
+            color: #0b2545;
+        }
+
+        #dashboardMessage {
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h2>🚆 Sri Lanka Railways Admin</h2>
+
+        <button class="logout-btn" id="logoutButton">
+            LOGOUT
+        </button>
+
+    </header>
+
+    <div class="container">
+
+        <h1 class="welcome">Welcome, Admin!</h1>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>📩 Passenger Messages</h3>
+                <p>Manage passenger enquiries.</p>
+            </div>
+
+            <div class="card">
+                <h3>🟡 Pending Messages</h3>
+                <p>Messages waiting for a reply.</p>
+            </div>
+
+            <div class="card">
+                <h3>🟢 Replied Messages</h3>
+                <p>Messages already answered.</p>
+            </div>
+
+        </div>
+
+        <div class="messages-section">
+
+            <h2>Passenger Message Inbox</h2>
+
+           <div id="messagesContainer">
+    <p>Loading passenger messages...</p>
+</div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    
+<script>
+    const SUPABASE_URL = "https://jvvmuymindxrzqtjfgcw.supabase.co";
+
+    const SUPABASE_KEY = "sb_publishable_jNswy2V-CdkCJZ8RVJ9meQ_f2-CKwJ9";
+
+    const supabaseClient = supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+    async function checkAdminLogin() {
+        const { data, error } =
+            await supabaseClient.auth.getSession();
+
+        if (error || !data.session) {
+            window.location.href = "admin-login.html";
+            return;
+        }
+
+        loadPassengerMessages();
+    }
+
+    async function loadPassengerMessages() {
+        const container =
+            document.getElementById("messagesContainer");
+
+        container.textContent = "Loading passenger messages...";
+
+        const { data, error } = await supabaseClient
+            .from("messages")
+            .select("*")
+            .order("created_at", { ascending: false });
+
+        if (error) {
+            container.textContent =
+                "Unable to load messages: " + error.message;
+            return;
+        }
+
+        container.replaceChildren();
+
+        if (!data || data.length === 0) {
+            container.textContent = "No passenger messages yet.";
+            return;
+        }
+
+        data.forEach(function(msg) {
+            const card = document.createElement("div");
+            card.style.padding = "18px";
+            card.style.marginBottom = "15px";
+            card.style.border = "1px solid #d4af37";
+            card.style.borderRadius = "12px";
+
+            const name = document.createElement("h3");
+            name.textContent = msg.passenger_name || "No name";
+
+            const email = document.createElement("p");
+            email.textContent = "Email: " + (msg.email || "");
+
+            const subject = document.createElement("p");
+            subject.textContent = "Subject: " + (msg.subject || "");
+
+            const message = document.createElement("p");
+            message.textContent = "Message: " + (msg.message || "");
+
+            const status = document.createElement("p");
+            status.textContent = "Status: " + (msg.status || "Pending");
+
+            card.append(name, email, subject, message, status);
+            const replyBox = document.createElement("textarea");
+replyBox.placeholder = "Type your reply here...";
+replyBox.rows = 4;
+replyBox.style.width = "100%";
+replyBox.style.marginTop = "10px";
+
+const replyButton = document.createElement("button");
+replyButton.textContent = "Send Reply";
+replyButton.style.marginTop = "10px";
+
+card.appendChild(replyBox);
+card.appendChild(replyButton);
+replyButton.addEventListener("click", async function() {
+
+    const reply = replyBox.value.trim();
+
+    if (reply === "") {
+        alert("Please type your reply!");
+        return;
+    }
+
+    replyButton.disabled = true;
+    replyButton.textContent = "Sending...";
+
+    const { data, error } = await supabaseClient.functions.invoke(
+        "send-reply",
+        {
+            body: {
+                messageId: msg.id,
+                reply: reply
+            }
+        }
+    );
+
+    if (error) {
+        alert("Email sending failed: " + error.message);
+        replyButton.disabled = false;
+        replyButton.textContent = "Send Reply";
+        return;
+    }
+
+    if (data && data.success) {
+        alert("Reply email sent successfully!");
+        loadPassengerMessages();
+    } else {
+        alert("Email sending failed: " + (data?.error || "Unknown error"));
+        replyButton.disabled = false;
+        replyButton.textContent = "Send Reply";
+    }
+
+});
+            container.appendChild(card);
+        });
+    }
+
+    checkAdminLogin();
+
+    document.getElementById("logoutButton")
+        .addEventListener("click", async function() {
+
+            const { error } = await supabaseClient.auth.signOut();
+
+            if (error) {
+                alert(error.message);
+            } else {
+                window.location.href = "admin-login.html";
+            }
+        });
+</script>
+
+
+</body>
+</html>

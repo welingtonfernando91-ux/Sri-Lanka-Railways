@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sri Lanka Railways - Admin Login</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b2545;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .login-box {
+            background: white;
+            width: 380px;
+            max-width: 100%;
+            padding: 40px 30px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #0b2545;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #d4af37;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c49b20;
+        }
+
+        #message {
+            margin-top: 18px;
+            color: #c0392b;
+            overflow-wrap: anywhere;
+        }
+
+        .footer {
+            margin-top: 25px;
+            color: #777;
+            font-size: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <div class="logo">🚆</div>
+
+        <h2>Admin Login</h2>
+
+        <p class="subtitle">
+            Sri Lanka Railways Administration
+        </p>
+
+        <form id="loginForm">
+
+            <input
+                type="email"
+                id="adminEmail"
+                placeholder="Admin Email"
+                required
+            >
+
+            <input
+                type="password"
+                id="adminPassword"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit">
+                LOGIN
+            </button>
+
+        </form>
+
+        <p id="message"></p>
+
+        <div class="footer">
+            © Sri Lanka Railways
+        </div>
+
+    </div>
+<!-- SUPABASE CONNECTION -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL = "https://jvvmuymindxrzqtjfgcw.supabase.co";
+const SUPABASE_KEY = "sb_publishable_jNswy2V-CdkCJZ8RVJ9meQ_f2-CKwJ9";
+
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+// ADMIN LOGIN FUNCTION
+
+document.getElementById("loginForm").addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const email = document.getElementById("adminEmail").value.trim();
+    const password = document.getElementById("adminPassword").value;
+    const message = document.getElementById("message");
+
+    message.textContent = "Checking login...";
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password
+    });
+
+    if (error) {
+
+        message.textContent = "Login failed: " + error.message;
+
+    } else {
+
+    message.style.color = "green";
+    message.textContent = "Login successful! Welcome Admin.";
+
+    setTimeout(function() {
+        window.location.href = "admin-dashboard.html";
+    }, 1000);
+
+}
+
+});
+</script>
+</body>
+</html>

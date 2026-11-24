@@ -661,26 +661,31 @@ const selectedDate = travelDate;
 
         const details = card.querySelectorAll("p");
 
-        let trainNumber = "";
+       
+        
+let selectedTrainNumber = "";
 
-        details.forEach(function(detail) {
+details.forEach(function(detail) {
 
-            if (detail.textContent.startsWith("Train No:")) {
-                trainNumber = detail.textContent
-                    .replace("Train No:", "")
-                    .trim();
-            }
+    const originalText = detail.getAttribute("data-en") || detail.textContent;
 
-        });
+    if (originalText.trim().startsWith("Train No:")) {
+        selectedTrainNumber = originalText
+            .replace("Train No:", "")
+            .trim();
+    }
 
-        const route = trainRoutes[trainNumber];
+});
 
-        if (!route) return;
+const route = trainRoutes[selectedTrainNumber];
+
+if (!route) return;
+
         // SKIP TRAIN IF NO SERVICE ON SELECTED DATE
 
 if (
-    noServiceDates[trainNumber] &&
-    noServiceDates[trainNumber].includes(selectedDate)
+    noServiceDates[selectedTrainNumber] &&
+noServiceDates[selectedTrainNumber].includes(selectedDate)
 ) {
     return;
 }
@@ -733,10 +738,13 @@ matchingTrains.forEach(function(card) {
 
     trainDetails.forEach(function(detail) {
 
-        if (detail.textContent.startsWith("Train No:")) {
-            selectedTrainNumber = detail.textContent
-                .replace("Train No:", "")
-                .trim();
+        const originalText =
+    detail.getAttribute("data-en") || detail.textContent;
+
+if (originalText.trim().startsWith("Train No:")) {
+            selectedTrainNumber = originalText
+    .replace("Train No:", "")
+    .trim();
         }
 
         if (detail.textContent.startsWith("From:")) {
@@ -753,42 +761,102 @@ matchingTrains.forEach(function(card) {
     const timetable = trainTimetables[selectedTrainNumber];
     console.log("Selected Train:", selectedTrainNumber);
 console.log("Timetable Found:", timetable);
+console.log("FROM STATION:", fromStation);
+console.log("TO STATION:", toStation);
 
     // REMOVE OLD TIMING DETAILS
     trainDetails.forEach(function(detail) {
 
-        if (
-            detail.textContent.includes("Arrival:") ||
-            detail.textContent.includes("Departure:")
-        ) {
+       const originalText =
+    detail.getAttribute("data-en") || detail.textContent;
+
+if (
+    originalText.includes("Arrival:") ||
+    originalText.includes("Departure:")
+)
+         {
             detail.remove();
         }
 
     });
 
     // ADD SELECTED STATION TIMINGS
-    const departureInfo = document.createElement("p");
-    const arrivalInfo = document.createElement("p");
+   const departureInfo = document.createElement("p");
+const arrivalInfo = document.createElement("p");
 
-    if (timetable) {
+departureInfo.classList.add("dynamic-timing");
+arrivalInfo.classList.add("dynamic-timing");
 
-        const departure = timetable[fromStation];
-        const arrival = timetable[toStation];
+    const language = document.documentElement.lang || "en";
 
-        departureInfo.textContent =
-            "Departure (" + fromStation + "): " +
-            (departure?.departure || "Time not added yet");
+const fromStationName =
+    document.getElementById("fromStation").selectedOptions[0].textContent.trim();
 
-        arrivalInfo.textContent =
-            "Arrival (" + toStation + "): " +
-            (arrival?.arrival || "Time not added yet");
+const toStationName =
+    document.getElementById("toStation").selectedOptions[0].textContent.trim();
 
-    } else {
-
-        departureInfo.textContent = "Departure: Timetable data not added yet";
-        arrivalInfo.textContent = "Arrival: Timetable data not added yet";
-
+const timingLabels = {
+    en: {
+        departure: "Departure",
+        arrival: "Arrival",
+        notAdded: "Time not added yet",
+        noData: "Timetable data not added yet"
+    },
+    ta: {
+        departure: "புறப்படும் நேரம்",
+        arrival: "சேரும் நேரம்",
+        notAdded: "நேரம் இன்னும் சேர்க்கப்படவில்லை",
+        noData: "கால அட்டவணை இன்னும் சேர்க்கப்படவில்லை"
+    },
+    si: {
+        departure: "පිටත්වීම",
+        arrival: "ළඟාවීම",
+        notAdded: "වේලාව තවම ඇතුළත් කර නැත",
+        noData: "කාලසටහන තවම ඇතුළත් කර නැත"
     }
+};
+
+const labels = timingLabels[language] || timingLabels.en;
+
+if (timetable) {
+
+    const departure = timetable[fromStation];
+    const arrival = timetable[toStation];
+
+    departureInfo.setAttribute("data-type", "departure");
+    departureInfo.setAttribute("data-station", fromStationName);
+    departureInfo.setAttribute("data-time", departure?.departure || "");
+
+    arrivalInfo.setAttribute("data-type", "arrival");
+    arrivalInfo.setAttribute("data-station", toStationName);
+    arrivalInfo.setAttribute("data-time", arrival?.arrival || "");
+
+} else {
+
+    departureInfo.setAttribute("data-type", "departure");
+    departureInfo.setAttribute("data-station", fromStationName);
+    departureInfo.setAttribute("data-time", "");
+
+    arrivalInfo.setAttribute("data-type", "arrival");
+    arrivalInfo.setAttribute("data-station", toStationName);
+    arrivalInfo.setAttribute("data-time", "");
+
+}
+// SHOW TIMINGS IMMEDIATELY AFTER SEARCH
+
+const departureTime =
+    departureInfo.getAttribute("data-time");
+
+const arrivalTime =
+    arrivalInfo.getAttribute("data-time");
+
+departureInfo.textContent =
+    labels.departure + " (" + fromStationName + "): " +
+    (departureTime || (timetable ? labels.notAdded : labels.noData));
+
+arrivalInfo.textContent =
+    labels.arrival + " (" + toStationName + "): " +
+    (arrivalTime || (timetable ? labels.notAdded : labels.noData));
 
     trainCard.appendChild(departureInfo);
     trainCard.appendChild(arrivalInfo);
@@ -829,6 +897,8 @@ const closeModal = document.querySelector(".close-modal");
 document.addEventListener("click", function(event) {
 
     const button = event.target.closest(".view-details");
+    console.log("CLICK TARGET:", event.target.outerHTML);
+console.log("VIEW DETAILS BUTTON:", button);
 
     if (!button) return;
 
@@ -1038,9 +1108,11 @@ if (premiumClassButton && reservationFareSection) {
 
 const calculateFareButton = document.getElementById("calculateFareButton");
 
-const fareFromSelect = document.getElementById("fareFrom");
+ 
+const fareFromSelect = document.getElementById("fromStation");
 
-const fareToSelect = document.getElementById("fareTo");
+const fareToSelect = document.getElementById("toStation");
+
 
 const fareResult = document.getElementById("fare-result");
 
@@ -1049,8 +1121,8 @@ if (calculateFareButton) {
 
     calculateFareButton.addEventListener("click", function () {
 
-        const fromStation = fareFromSelect.value;
-        const toStation = fareToSelect.value;
+      
+       
 
         if (fromStation === "" || toStation === "") {
             fareResult.textContent = "Please select both stations.";
@@ -1100,18 +1172,20 @@ trainSelectorButtons.forEach(function(button) {
         const selectedNumber = button.dataset.train;
 
         // Find selected train card
-        const selectedCard = originalTrainCards.find(function(card) {
+       const selectedCard = originalTrainCards.find(function(card) {
 
-            const trainNumberText = Array.from(
-                card.querySelectorAll("p")
-            ).find(function(p) {
-                return p.textContent.trim().startsWith("Train No:");
-            });
+    return Array.from(
+        card.querySelectorAll("p")
+    ).some(function(p) {
 
-            return trainNumberText &&
-                trainNumberText.textContent.includes(selectedNumber);
+        const originalText = p.getAttribute("data-en") || p.textContent;
 
-        });
+        return originalText.trim().startsWith("Train No:") &&
+            originalText.includes(selectedNumber);
+
+    });
+
+});
 
         if (!selectedCard) return;
 
@@ -1136,3 +1210,300 @@ trainSelectorButtons.forEach(function(button) {
     });
 
 });
+// Language Switcher
+document.getElementById("lang-en").addEventListener("click", function() {
+    changeLanguage("en");
+});
+
+document.getElementById("lang-ta").addEventListener("click", function() {
+    changeLanguage("ta");
+});
+
+document.getElementById("lang-si").addEventListener("click", function() {
+    changeLanguage("si");
+});
+changeLanguage("en");
+
+
+function changeLanguage(language) {
+
+    document.documentElement.lang = language;
+
+    document.querySelectorAll("[data-en], [data-ta], [data-si]").forEach(function(element) {
+
+        const translatedText = element.getAttribute("data-" + language);
+
+        if (translatedText !== null) {
+
+            if (element.tagName === "OPTION") {
+                element.textContent = translatedText;
+                element.setAttribute("label", translatedText);
+            } else {
+                element.textContent = translatedText;
+            }
+
+        }
+
+    });
+    // UPDATE DYNAMIC TIMING LANGUAGE
+
+    const timingLabels = {
+        en: {
+            departure: "Departure",
+            arrival: "Arrival",
+            notAdded: "Time not added yet",
+            noData: "Timetable data not added yet"
+        },
+        ta: {
+            departure: "புறப்படும் நேரம்",
+            arrival: "சேரும் நேரம்",
+            notAdded: "நேரம் இன்னும் சேர்க்கப்படவில்லை",
+            noData: "கால அட்டவணை இன்னும் சேர்க்கப்படவில்லை"
+        },
+        si: {
+            departure: "පිටත්වීම",
+            arrival: "ළඟාවීම",
+            notAdded: "වේලාව තවම ඇතුළත් කර නැත",
+            noData: "කාලසටහන තවම ඇතුළත් කර නැත"
+        }
+    };
+
+    const labels = timingLabels[language] || timingLabels.en;
+
+    document.querySelectorAll(".dynamic-timing").forEach(function(element) {
+
+    const type = element.getAttribute("data-type");
+    const time = element.getAttribute("data-time");
+
+    const stationSelect = type === "departure"
+        ? document.getElementById("fromStation")
+        : document.getElementById("toStation");
+
+    const station = stationSelect.selectedOptions[0].textContent.trim();
+
+    const label = type === "departure"
+        ? labels.departure
+        : labels.arrival;
+
+    const timeText = time || labels.notAdded;
+
+    element.textContent = label + " (" + station + "): " + timeText;
+
+});
+}
+// MOBILE HAMBURGER MENU
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const menuToggle = document.getElementById("menu-toggle");
+    const navbar = document.querySelector(".navbar");
+
+    menuToggle.addEventListener("click", function() {
+
+        navbar.classList.toggle("active");
+
+    });
+
+    // CLOSE MENU AFTER CLICKING A LINK
+
+    navbar.querySelectorAll("a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            navbar.classList.remove("active");
+
+        });
+
+    });
+
+});
+// STATION PHOTO GALLERY
+
+function openStationGallery(station) {
+
+    const galleries = {
+        "colombo-fort": {
+    title: "Colombo Fort Railway Station",
+    photos: [
+        "image/colombo_fort_01.jpg",
+        "image/colombo_fort_02.jpg",
+        "image/colombo_fort_03.jpg",
+        "image/colombo_fort_04.jpg"
+    ]
+},
+
+"kandy": {
+    title: "Kandy Railway Station",
+    photos: [
+        "image/kandy_01.jpg",
+        "image/kandy_02.jpg",
+        "image/kandy_03.jpg",
+        "image/kandy_04.jpg",
+        "image/kandy_05.jpg",
+        "image/kandy_06.jpg",
+        "image/kandy_07.jpg",
+        "image/kandy_08.jpg"
+    ]
+},
+
+
+"ella": {
+    title: "Ella Railway Station",
+    photos: [
+        "image/ella_01.jpg",
+        "image/ella_02.jpg",
+        "image/ella_03.jpg",
+        "image/ella_04.jpg",
+        "image/ella_05.jpg",
+        "image/ella_06.jpg",
+        "image/ella_07.jpg",
+        "image/ella_08.jpg"
+    ]
+},
+
+"jaffna": {
+    title: "Jaffna Railway Station",
+    photos: [
+        "image/jaffna_01.jpg",
+        "image/jaffna_02.jpg",
+        "image/jaffna_03.jpg",
+        "image/jaffna_04.jpg",
+        "image/jaffna_05.jpg",
+        "image/jaffna_06.jpg",
+        "image/jaffna_07.jpg",
+        "image/jaffna_08.jpg",
+        "image/jaffna_09.jpg",
+        "image/jaffna_10.jpg"
+    ]
+}
+    };
+
+    const gallery = galleries[station];
+
+    if (!gallery) return;
+
+    document.getElementById("galleryTitle").textContent = gallery.title;
+
+    const photoContainer = document.getElementById("galleryPhotos");
+
+    photoContainer.innerHTML = "";
+
+    gallery.photos.forEach(function(photo) {
+
+        const img = document.createElement("img");
+
+        img.src = photo;
+        img.alt = gallery.title;
+        img.className = "gallery-photo";
+
+img.onclick = function() {
+    this.classList.toggle("photo-enlarged");
+};
+
+photoContainer.appendChild(img);
+
+    });
+
+    document.getElementById("stationGallery").style.display = "flex";
+}
+
+
+function closeStationGallery() {
+
+    document.getElementById("stationGallery").style.display = "none";
+
+}
+// STATION DETAILS INFORMATION
+
+const stationDetails = {
+
+    "colombo-fort": {
+        title: "Colombo Fort Railway Station",
+        history: "Colombo Fort is a major railway hub in Sri Lanka, connecting many railway lines and destinations.",
+        facilities: "Passenger waiting areas, ticketing facilities and station platforms. Availability may vary.",
+        services: "Long-distance and suburban railway services.",
+        location: "Colombo, Western Province",
+        telephone: "Official station telephone number to be verified."
+    },
+
+    "kandy": {
+        title: "Kandy Railway Station",
+        history: "Kandy Railway Station serves the historic city of Kandy and is an important stop on the Main Line.",
+        facilities: "Passenger waiting areas, ticketing facilities and platforms. Availability may vary.",
+        services: "Railway services connecting Kandy with Colombo and other destinations.",
+        location: "Kandy, Central Province",
+        telephone: "Official station telephone number to be verified."
+    },
+
+    "ella": {
+        title: "Ella Railway Station",
+        history: "Ella Railway Station is located in Sri Lanka's scenic hill country on the Main Line.",
+        facilities: "Passenger waiting areas and station platforms. Availability may vary.",
+        services: "Main Line railway services connecting Ella with other destinations.",
+        location: "Ella, Uva Province",
+        telephone: "Official station telephone number to be verified."
+    },
+
+    "jaffna": {
+        title: "Jaffna Railway Station",
+        history: "Jaffna Railway Station is an important railway station in Sri Lanka's Northern Province.",
+        facilities: "Passenger waiting areas, ticketing facilities and platforms. Availability may vary.",
+        services: "Northern Line railway services connecting Jaffna with other destinations.",
+        location: "Jaffna, Northern Province",
+        telephone: "Official station telephone number to be verified."
+    }
+
+};
+
+
+// OPEN STATION DETAILS
+
+window.openStationDetails = function(station) {
+
+    const details = stationDetails[station];
+
+    if (!details) return;
+
+    document.getElementById("stationDetailsTitle").textContent =
+        details.title;
+
+    document.getElementById("stationDetailsContent").innerHTML = `
+
+        <div class="station-detail-box">
+            <h3>📖 Station History</h3>
+            <p>${details.history}</p>
+        </div>
+
+        <div class="station-detail-box">
+            <h3>🏢 Station Facilities</h3>
+            <p>${details.facilities}</p>
+        </div>
+
+        <div class="station-detail-box">
+            <h3>🚆 Railway Services</h3>
+            <p>${details.services}</p>
+        </div>
+
+        <div class="station-detail-box">
+            <h3>📍 Location</h3>
+            <p>${details.location}</p>
+        </div>
+
+        <div class="station-detail-box">
+            <h3>☎️ Telephone Number</h3>
+            <p>${details.telephone}</p>
+        </div>
+
+    `;
+
+    document.getElementById("stationDetailsModal").style.display = "flex";
+
+}
+
+
+// CLOSE STATION DETAILS
+
+window.closeStationDetails = function() {
+    document.getElementById("stationDetailsModal").style.display = "none";
+
+}
