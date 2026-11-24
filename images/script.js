@@ -1328,7 +1328,7 @@ function openStationGallery(station) {
 photos: [
     "images/colombo_fort_01.jpg",
     "images/colombo_fort_02.jpg",
-    "images/colombo_fort_03.jpg",
+    "images/Colombo_fort_03.jpg",
     "images/colombo_fort_04.jpg"
 ]
 },
