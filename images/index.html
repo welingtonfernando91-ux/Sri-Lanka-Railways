@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title
+    data-en="SRI LANKA RAILWAYS"
+    data-ta="இலங்கை ரயில்வே"
+    data-si="ශ්‍රී ලංකා දුම්රිය සේවය">
+    Sri Lanka Railways
+</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo"
+    data-en="🚆 SRI LANKA RAILWAYS"
+    data-ta="🚆 இலங்கை ரயில்வே"
+    data-si="🚆 ශ්‍රී ලංකා දුම්රිය සේවය">
+    🚆 Sri Lanka Railways
+</div>
+
+       <button class="menu-toggle" id="menu-toggle">
+    ☰
+</button> 
+<nav class="navbar">
+    <a href="#home"
+       data-en="Home"
+       data-ta="முகப்பு"
+       data-si="මුල් පිටුව">Home</a>
+
+    <a href="#schedule"
+       data-en="Train Schedule"
+       data-ta="ரயில் நேர அட்டவணை"
+       data-si="දුම්රිය කාලසටහන">Train Schedule</a>
+
+    <a href="#stations"
+       data-en="Stations"
+       data-ta="ரயில் நிலையங்கள்"
+       data-si="දුම්රිය ස්ථාන">Stations</a>
+
+    <a href="#ticket-prices"
+       data-en="Ticket Prices"
+       data-ta="பயணச்சீட்டு கட்டணங்கள்"
+       data-si="ප්‍රවේශපත්‍ර ගාස්තු">Ticket Prices</a>
+
+    <a href="#directory"
+       data-en="Telephone Directory"
+       data-ta="தொலைபேசி விபரங்கள்"
+       data-si="දුරකථන නාමාවලිය">Telephone Directory</a>
+
+    <a href="index.html#contact-form"
+       data-en="Contact"
+       data-ta="தொடர்பு"
+       data-si="සම්බන්ධ වන්න">Contact</a>
+</nav>
+
+       <div class="language">
+    <button id="lang-en">EN</button>
+    <button id="lang-ta">தமிழ்</button>
+    <button id="lang-si">සිංහල</button>
+</div> 
+
+    </header>
+
+    <main class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1 data-en="Sri Lanka Railways"
+    data-ta="இலங்கை ரயில்வே"
+    data-si="ශ්‍රී ලංකා දුම්රිය සේවය">
+    Sri Lanka Railways
+</h1>
+
+<h2 data-en="Welcome to Sri Lanka Railways"
+    data-ta="இலங்கை ரயில்வேக்கு வரவேற்கிறோம்"
+    data-si="ශ්‍රී ලංකා දුම්රිය සේවයට සාදරයෙන් පිළිගනිමු">
+    Welcome to Sri Lanka Railways
+</h2>
+
+<p data-en="Your Journey, Our Priority"
+   data-ta="உங்கள் பயணம், எங்கள் முன்னுரிமை"
+   data-si="ඔබේ ගමන, අපගේ ප්‍රමුඛතාවය">
+   Your Journey, Our Priority
+</p>
+        
+<a href="#train-search" class="hero-button">
+    Plan Your Journey
+</a>
+
+
+    </div>
+
+</main>
+<section class="train-search" id="train-search">
+
+<h2 data-en="Find Your Train"
+    data-ta="உங்கள் ரயிலைத் தேடுங்கள்"
+    data-si="ඔබේ දුම්රිය සොයන්න">
+    Find Your Train
+</h2>
+
+<p data-en="Search trains and plan your journey"
+   data-ta="ரயில்களைத் தேடி உங்கள் பயணத்தைத் திட்டமிடுங்கள்"
+   data-si="දුම්රිය සොයා ඔබේ ගමන සැලසුම් කරන්න">
+   Search trains and plan your journey
+</p>
+
+    <div class="search-box">
+
+        <div class="input-group">
+           <label data-en="From Station"
+       data-ta="புறப்படும் நிலையம்"
+       data-si="පිටත්වන දුම්රිය ස්ථානය">From Station</label>
+            
+<select id="fromStation">
+   <option value=""
+        data-en="Select Departure"
+        data-ta="புறப்படும் நிலையத்தைத் தேர்ந்தெடுக்கவும்"
+        data-si="පිටත්වන ස්ථානය තෝරන්න">
+    Select Departure
+   </option>
+<option value="Colombo Fort"
+        data-en="Colombo Fort"
+        data-ta="கொழும்பு கோட்டை"
+        data-si="කොළඹ කොටුව">Colombo Fort</option>
+<option value="Gampaha" data-en="Gampaha" data-ta="கம்பஹா" data-si="ගම්පහ">Gampaha</option>
+
+<option value="Polgahawela" data-en="Polgahawela" data-ta="பொல்கஹவெல" data-si="පොල්ගහවෙල">Polgahawela</option>
+
+<option value="Maho" data-en="Maho" data-ta="மஹோ" data-si="මහව">Maho</option>
+
+<option value="Kurunegala" data-en="Kurunegala" data-ta="குருநாகல்" data-si="කුරුණෑගල">Kurunegala</option>
+
+<option value="Anuradhapura" data-en="Anuradhapura" data-ta="அனுராதபுரம்" data-si="අනුරාධපුරය">Anuradhapura</option>
+
+<option value="Madawachchiya" data-en="Madawachchiya" data-ta="மதவாச்சி" data-si="මැදවච්චිය">Madawachchiya</option>
+
+<option value="Cheddikulam" data-en="Cheddikulam" data-ta="செட்டிகுளம்" data-si="චෙඩ්ඩිකුලම්">Cheddikulam</option>
+
+<option value="Madu Road" data-en="Madu Road" data-ta="மடு வீதி" data-si="මඩු පාර">Madu Road</option>
+
+<option value="Murunkan" data-en="Murunkan" data-ta="முருங்கன்" data-si="මුරුන්කන්">Murunkan</option>
+
+<option value="Mannar" data-en="Mannar" data-ta="மன்னார்" data-si="මන්නාරම">Mannar</option>
+
+<option value="Pesalai" data-en="Pesalai" data-ta="பேசாலை" data-si="පේසාලේ">Pesalai</option>
+
+<option value="Talaimannar" data-en="Talaimannar" data-ta="தலைமன்னார்" data-si="තලෙයිමන්නාරම">Talaimannar</option>
+
+<option value="Talaimannar Pier" data-en="Talaimannar Pier" data-ta="தலைமன்னார் இறங்குதுறை" data-si="තලෙයිමන්නාරම තොටුපළ">Talaimannar Pier</option>
+
+<option value="Vavuniya" data-en="Vavuniya" data-ta="வவுனியா" data-si="වවුනියාව">Vavuniya</option>
+
+<option value="Kilinochchi" data-en="Kilinochchi" data-ta="கிளிநொச்சி" data-si="කිලිනොச்சිය">Kilinochchi</option>
+
+<option value="Kodikamam" data-en="Kodikamam" data-ta="கொடிகாமம்" data-si="කොඩිකාමම්">Kodikamam</option>
+
+<option value="Chavakachcheri" data-en="Chavakachcheri" data-ta="சாவகச்சேரி" data-si="චාවකච්චේරිය">Chavakachcheri</option>
+
+<option value="Jaffna" data-en="Jaffna" data-ta="யாழ்ப்பாணம்" data-si="යාපනය">Jaffna</option>
+
+<option value="Kankesanthurai" data-en="Kankesanthurai (KKS)" data-ta="காங்கேசன்துறை (KKS)" data-si="කන්කසන්තුරේ (KKS)">Kankesanthurai (KKS)</option>
+
+<option value="Mount Lavinia" data-en="Mount Lavinia" data-ta="கல்கிசை" data-si="ගල්කිස්ස">Mount Lavinia</option>
+
+<option value="Moratuwa" data-en="Moratuwa" data-ta="மொரட்டுவ" data-si="මොරටුව">Moratuwa</option>
+</select>
+
+        </div>
+        
+        <div class="input-group">
+           <label data-en="To Station"
+       data-ta="சேருமிடம்"
+       data-si="ගමනාන්ත දුම්රිය ස්ථානය">To Station</label>
+          <select id="toStation">
+               <option value=""
+        data-en="Select Destination"
+        data-ta="சேரும் நிலையத்தைத் தேர்ந்தெடுக்கவும்"
+        data-si="ගමනාන්ත ස්ථානය තෝරන්න">
+    Select Destination
+</option>
+<option value="Colombo Fort"
+        data-en="Colombo Fort"
+        data-ta="கொழும்பு கோட்டை"
+        data-si="කොළඹ කොටුව">Colombo Fort</option>
+<option value="Gampaha" data-en="Gampaha" data-ta="கம்பஹா" data-si="ගම්පහ">Gampaha</option>
+
+<option value="Polgahawela" data-en="Polgahawela" data-ta="பொல்கஹவெல" data-si="පොල්ගහවෙල">Polgahawela</option>
+
+<option value="Maho" data-en="Maho" data-ta="மஹோ" data-si="මහව">Maho</option>
+
+<option value="Kurunegala" data-en="Kurunegala" data-ta="குருநாகல்" data-si="කුරුණෑගල">Kurunegala</option>
+
+<option value="Anuradhapura" data-en="Anuradhapura" data-ta="அனுராதபுரம்" data-si="අනුරාධපුරය">Anuradhapura</option>
+
+<option value="Madawachchiya" data-en="Madawachchiya" data-ta="மதவாச்சி" data-si="මැදවච්චිය">Madawachchiya</option>
+
+<option value="Cheddikulam" data-en="Cheddikulam" data-ta="செட்டிகுளம்" data-si="චෙඩ්ඩිකුලම්">Cheddikulam</option>
+
+<option value="Madu Road" data-en="Madu Road" data-ta="மடு வீதி" data-si="මඩු පාර">Madu Road</option>
+
+<option value="Murunkan" data-en="Murunkan" data-ta="முருங்கன்" data-si="මුරුන්කන්">Murunkan</option>
+
+<option value="Mannar" data-en="Mannar" data-ta="மன்னார்" data-si="මන්නාරම">Mannar</option>
+
+<option value="Pesalai" data-en="Pesalai" data-ta="பேசாலை" data-si="පේසාලේ">Pesalai</option>
+
+<option value="Talaimannar" data-en="Talaimannar" data-ta="தலைமன்னார்" data-si="තලෙයිමන්නාරම">Talaimannar</option>
+
+<option value="Talaimannar Pier" data-en="Talaimannar Pier" data-ta="தலைமன்னார் இறங்குதுறை" data-si="තලෙයිමන්නාරම තොටුපළ">Talaimannar Pier</option>
+
+<option value="Vavuniya" data-en="Vavuniya" data-ta="வவுனியா" data-si="වවුනියාව">Vavuniya</option>
+
+<option value="Kilinochchi" data-en="Kilinochchi" data-ta="கிளிநொச்சி" data-si="කිලිනොச்சිය">Kilinochchi</option>
+
+<option value="Kodikamam" data-en="Kodikamam" data-ta="கொடிகாமம்" data-si="කොඩිකාමම්">Kodikamam</option>
+
+<option value="Chavakachcheri" data-en="Chavakachcheri" data-ta="சாவகச்சேரி" data-si="චාවකච්චේරිය">Chavakachcheri</option>
+
+<option value="Jaffna" data-en="Jaffna" data-ta="யாழ்ப்பாணம்" data-si="යාපනය">Jaffna</option>
+
+<option value="Kankesanthurai" data-en="Kankesanthurai (KKS)" data-ta="காங்கேசன்துறை (KKS)" data-si="කන්කසන්තුරේ (KKS)">Kankesanthurai (KKS)</option>
+
+<option value="Mount Lavinia" data-en="Mount Lavinia" data-ta="கல்கிசை" data-si="ගල්කිස්ස">Mount Lavinia</option>
+
+<option value="Moratuwa" data-en="Moratuwa" data-ta="மொரட்டுவ" data-si="මොරටුව">Moratuwa</option>
+            </select>
+        </div>
+
+
+        <div class="input-group">
+           <label data-en="Travel Date"
+       data-ta="பயணத் தேதி"
+       data-si="ගමන් දිනය">
+    Travel Date
+</label>
+            <input type="date">
+        </div>
+
+        <button class="search-button"
+        data-en="Search Train"
+        data-ta="ரயிலைத் தேடு"
+        data-si="දුම්රිය සොයන්න">
+    Search Train
+</button>
+
+    </div>
+    <div id="search-result"></div>
+    
+   </section>
+
+
+<!-- TRAIN SCHEDULE SECTION -->
+
+<section class="schedule-section" id="schedule">
+
+    <h2
+    data-en="Train Schedule"
+    data-ta="ரயில் நேர அட்டவணை"
+    data-si="දුම්රිය කාලසටහන">
+    Train Schedule
+</h2>
+
+<p
+    data-en="Explore Train Timings Across Sri Lanka"
+    data-ta="இலங்கை முழுவதும் ரயில் நேரங்களை அறிந்துகொள்ளுங்கள்"
+    data-si="ශ්‍රී ලංකාව පුරා දුම්රිය කාලසටහන් බලන්න">
+    Explore Train Timings Across Sri Lanka
+</p>
+
+    <div class="schedule-container">
+
+        <!-- TALAIMANNAR EXPRESS 5004 -->
+        <div class="schedule-card">
+
+    <h3
+        data-en="🚆 Talaimannar Express"
+        data-ta="🚆 தலைமன்னார் விரைவு ரயில்"
+        data-si="🚆 තලෙයිමන්නාරම සීඝ්‍රගාමී දුම්රිය">
+        🚆 Talaimannar Express
+    </h3>
+
+    <p data-en="Train No: 5004"
+       data-ta="ரயில் இலக்கம்: 5004"
+       data-si="දුම්රිය අංකය: 5004">
+       Train No: 5004
+    </p>
+
+    <p data-en="From: Talaimannar Pier"
+       data-ta="புறப்படும் இடம்: தலைமன்னார் இறங்குதுறை"
+       data-si="පිටත්වීම: තලෙයිමන්නාරම තොටුපළ">
+       From: Talaimannar Pier
+    </p>
+
+    <p data-en="To: Colombo Fort"
+       data-ta="சேருமிடம்: கொழும்பு கோட்டை"
+       data-si="ගමනාන්තය: කොළඹ කොටුව">
+       To: Colombo Fort
+    </p>
+
+    <p data-en="Departure: 04:10 AM"
+       data-ta="புறப்படும் நேரம்: 04:10 AM"
+       data-si="පිටත්වන වේලාව: 04:10 AM">
+       Departure: 04:10 AM
+    </p>
+
+    <p data-en="Arrival: 10:44 AM"
+       data-ta="வந்து சேரும் நேரம்: 10:44 AM"
+       data-si="ළඟාවන වේලාව: 10:44 AM">
+       Arrival: 10:44 AM
+    </p>
+
+    <span
+        data-en="Express Train"
+        data-ta="விரைவு ரயில்"
+        data-si="සීඝ්‍රගාමී දුම්රිය">
+        Express Train
+    </span>
+
+    <button class="view-details" type="button"
+        data-en="View Details"
+        data-ta="விபரங்களைப் பார்க்க"
+        data-si="විස්තර බලන්න">
+        View Details
+    </button>
+
+</div>
+
+<div class="train-selector">
+
+   
+<h3 class="selector-title"
+    data-en="SELECT YOUR TRAIN"
+    data-ta="உங்கள் ரயிலைத் தேர்ந்தெடுக்கவும்"
+    data-si="ඔබේ දුම්රිය තෝරන්න">
+    SELECT YOUR TRAIN
+</h3>
+
+<p class="selector-subtitle"
+   data-en="Choose a train to explore its schedule"
+   data-ta="ரயில் நேர அட்டவணையைப் பார்க்க ஒரு ரயிலைத் தேர்ந்தெடுக்கவும்"
+   data-si="දුම්රිය කාලසටහන බැලීමට දුම්රියක් තෝරන්න">
+   Choose a train to explore its schedule
+</p>
+
+
+    <div class="train-buttons">
+        <button type="button" data-train="5003">5003</button>
+        <button type="button" data-train="5004">5004</button>
+        <button type="button" data-train="4077">4077</button>
+        <button type="button" data-train="4078">4078</button>
+        <button type="button" data-train="4021">4021</button>
+        <button type="button" data-train="4022">4022</button>
+        <button type="button" data-train="4089">4089</button>
+        <button type="button" data-train="4090">4090</button>
+    </div>
+
+    <p class="selector-hint"
+   data-en="Select your preferred train number"
+   data-ta="உங்களுக்கு விருப்பமான ரயில் இலக்கத்தைத் தேர்ந்தெடுக்கவும்"
+   data-si="ඔබ කැමති දුම්රිය අංකය තෝරන්න">
+   Select your preferred train number
+</p>
+    <div id="selectedScheduleDisplay"></div>
+
+</div>
+
+
+        <!-- TALAIMANNAR EXPRESS 5003 -->
+        
+<div class="schedule-card">
+
+    <h3
+        data-en="🚆 Talaimannar Express"
+        data-ta="🚆 தலைமன்னார் விரைவு ரயில்"
+        data-si="🚆 තලෙයිමන්නාරම සීඝ්‍රගාමී දුම්රිය">
+        🚆 Talaimannar Express
+    </h3>
+
+    <p data-en="Train No: 5003"
+       data-ta="ரயில் இலக்கம்: 5003"
+       data-si="දුම්රිය අංකය: 5003">
+       Train No: 5003
+    </p>
+
+    <p data-en="From: Colombo Fort"
+       data-ta="புறப்படும் இடம்: கொழும்பு கோட்டை"
+       data-si="පිටත්වීම: කොළඹ කොටුව">
+       From: Colombo Fort
+    </p>
+
+    <p data-en="To: Talaimannar Pier"
+       data-ta="சேருமிடம்: தலைமன்னார் இறங்குதுறை"
+       data-si="ගමනාන්තය: තලෙයිමන්නාරම තොටුපළ">
+       To: Talaimannar Pier
+    </p>
+
+    <p data-en="Departure: 03:50 PM"
+       data-ta="புறப்படும் நேரம்: 03:50 PM"
+       data-si="පිටත්වන වේලාව: 03:50 PM">
+       Departure: 03:50 PM
+    </p>
+
+    <p data-en="Arrival: 10:28 PM"
+       data-ta="வந்து சேரும் நேரம்: 10:28 PM"
+       data-si="ළඟාවන වේලාව: 10:28 PM">
+       Arrival: 10:28 PM
+    </p>
+
+    <span
+        data-en="Express Train"
+        data-ta="விரைவு ரயில்"
+        data-si="සීඝ්‍රගාමී දුම්රිය">
+        Express Train
+    </span>
+
+    <button class="view-details" type="button"
+        data-en="View Details"
+        data-ta="விபரங்களைப் பார்க்க"
+        data-si="විස්තර බලන්න">
+        View Details
+    </button>
+
+</div>
+
+
+        <!-- YAL DEVI 4078 -->
+        
+<div class="schedule-card">
+
+    <h3
+        data-en="🚆 Yal Devi Express"
+        data-ta="🚆 யாழ் தேவி விரைவு ரயில்"
+        data-si="🚆 යාල් දේවී සීඝ්‍රගාමී දුම්රිය">
+        🚆 Yal Devi Express
+    </h3>
+
+    <p data-en="Train No: 4078"
+       data-ta="ரயில் இலக்கம்: 4078"
+       data-si="දුම්රිය අංකය: 4078">
+       Train No: 4078
+    </p>
+
+    <p data-en="From: Kankesanthurai (KKS)"
+       data-ta="புறப்படும் இடம்: காங்கேசன்துறை (KKS)"
+       data-si="පිටත්වීම: කන්කසන්තුරේ (KKS)">
+       From: Kankesanthurai (KKS)
+    </p>
+
+    <p data-en="To: Colombo Fort"
+       data-ta="சேருமிடம்: கொழும்பு கோட்டை"
+       data-si="ගමනාන්තය: කොළඹ කොටුව">
+       To: Colombo Fort
+    </p>
+
+    <p data-en="Departure: 10:30 AM"
+       data-ta="புறப்படும் நேரம்: 10:30 AM"
+       data-si="පිටත්වන වේලාව: 10:30 AM">
+       Departure: 10:30 AM
+    </p>
+
+    <p data-en="Arrival: 07:03 PM"
+       data-ta="வந்து சேரும் நேரம்: 07:03 PM"
+       data-si="ළඟාවන වේලාව: 07:03 PM">
+       Arrival: 07:03 PM
+    </p>
+
+    <span
+        data-en="Express Train"
+        data-ta="விரைவு ரயில்"
+        data-si="සීඝ්‍රගාමී දුම්රිය">
+        Express Train
+    </span>
+
+    <button class="view-details" type="button"
+        data-en="View Details"
+        data-ta="விபரங்களைப் பார்க்க"
+        data-si="විස්තර බලන්න">
+        View Details
+    </button>
+
+</div>
+
+
+        <!-- YAL DEVI 4077 -->
+        
+<div class="schedule-card">
+
+    <h3
+        data-en="🚆 Yal Devi Express"
+        data-ta="🚆 யாழ் தேவி விரைவு ரயில்"
+        data-si="🚆 යාල් දේවී සීඝ්‍රගාමී දුම්රිය">
+        🚆 Yal Devi Express
+    </h3>
+
+    <p data-en="Train No: 4077"
+       data-ta="ரயில் இலக்கம்: 4077"
+       data-si="දුම්රිය අංකය: 4077">
+       Train No: 4077
+    </p>
+
+    <p data-en="From: Colombo Fort"
+       data-ta="புறப்படும் இடம்: கொழும்பு கோட்டை"
+       data-si="පිටත්වීම: කොළඹ කොටුව">
+       From: Colombo Fort
+    </p>
+
+    <p data-en="To: Kankesanthurai (KKS)"
+       data-ta="சேருமிடம்: காங்கேசன்துறை (KKS)"
+       data-si="ගමනාන්තය: කන්කසන්තුරේ (KKS)">
+       To: Kankesanthurai (KKS)
+    </p>
+
+    <p data-en="Departure: 06:40 AM"
+       data-ta="புறப்படும் நேரம்: 06:40 AM"
+       data-si="පිටත්වන වේලාව: 06:40 AM">
+       Departure: 06:40 AM
+    </p>
+
+    <p data-en="Arrival: 02:33 PM"
+       data-ta="வந்து சேரும் நேரம்: 02:33 PM"
+       data-si="ළඟාවන වේලාව: 02:33 PM">
+       Arrival: 02:33 PM
+    </p>
+
+    <span
+        data-en="Express Train"
+        data-ta="விரைவு ரயில்"
+        data-si="සීඝ්‍රගාමී දුම්රිය">
+        Express Train
+    </span>
+
+    <button class="view-details" type="button"
+        data-en="View Details"
+        data-ta="விபரங்களைப் பார்க்க"
+        data-si="විස්තර බලන්න">
+        View Details
+    </button>
+
+</div>
+
+
+        <!-- A/C INTERCITY 4022 -->
+        
+<div class="schedule-card">
+
+    <h3
+        data-en="🚆 A/C Intercity Express"
+        data-ta="🚆 குளிரூட்டப்பட்ட நகரங்களுக்கு இடையிலான விரைவு ரயில்"
+        data-si="🚆 වායුසමනය කළ නගරාන්තර සීඝ්‍රගාමී දුම්රිය">
+        🚆 A/C Intercity Express
+    </h3>
+
+    <p
+        data-en="Train No: 4022"
+        data-ta="ரயில் இலக்கம்: 4022"
+        data-si="දුම්රිය අංකය: 4022">
+        Train No: 4022
+    </p>
+
+    <p
+        data-en="From: Kankesanthurai (KKS)"
+        data-ta="புறப்படும் இடம்: காங்கேசன்துறை (KKS)"
+        data-si="පිටත්වීම: කන්කසන්තුරේ (KKS)">
+        From: Kankesanthurai (KKS)
+    </p>
+
+    <p
+        data-en="To: Mount Lavinia"
+        data-ta="சேருமிடம்: மவுண்ட் லவீனியா"
+        data-si="ගමනාන්තය: ගල්කිස්ස">
+        To: Mount Lavinia
+    </p>
+
+    <p
+        data-en="KKS Departure: 01:50 PM"
+        data-ta="காங்கேசன்துறை புறப்படும் நேரம்: 01:50 PM"
+        data-si="කන්කසන්තුරේ පිටත්වන වේලාව: 01:50 PM">
+        KKS Departure: 01:50 PM
+    </p>
+
+    <p
+        data-en="Fort Arrival: 08:33 PM"
+        data-ta="கொழும்பு கோட்டை வந்து சேரும் நேரம்: 08:33 PM"
+        data-si="කොළඹ කොටුවට ළඟාවන වේලාව: 08:33 PM">
+        Fort Arrival: 08:33 PM
+    </p>
+
+    <p
+        data-en="Fort Departure: 08:34 PM"
+        data-ta="கொழும்பு கோட்டையிலிருந்து புறப்படும் நேரம்: 08:34 PM"
+        data-si="කොළඹ කොටුවෙන් පිටත්වන වේලාව: 08:34 PM">
+        Fort Departure: 08:34 PM
+    </p>
+
+    <p
+        data-en="MLV Arrival: 08:58 PM"
+        data-ta="மவுண்ட் லவீனியா வந்து சேரும் நேரம்: 08:58 PM"
+        data-si="ගල්කිස්සට ළඟාවන වේලාව: 08:58 PM">
+        MLV Arrival: 08:58 PM
+    </p>
+
+    <span
+        data-en="A/C Intercity"
+        data-ta="குளிரூட்டப்பட்ட நகரங்களுக்கு இடையிலான ரயில்"
+        data-si="වායුසමනය කළ නගරාන්තර දුම්රිය">
+        A/C Intercity
+    </span>
+
+    <button class="view-details" type="button"
+        data-en="View Details"
+        data-ta="விபரங்களைப் பார்க்க"
+        data-si="විස්තර බලන්න">
+        View Details
+    </button>
+
+</div>
+
+
+        <!-- A/C INTERCITY 4021 -->
+       
+<div class="schedule-card">
+
+    <h3
+        data-en="🚆 A/C Intercity Express"
+        data-ta="🚆 குளிரூட்டப்பட்ட நகரங்களுக்கு இடையிலான விரைவு ரயில்"
+        data-si="🚆 වායුසමනය කළ නගරාන්තර සීඝ්‍රගාමී දුම්රිය">
+        🚆 A/C Intercity Express
+    </h3>
+
+    <p
+        data-en="Train No: 4021"
+        data-ta="ரயில் இலக்கம்: 4021"
+        data-si="දුම්රිය අංකය: 4021">
+        Train No: 4021
+    </p>
+
+    <p
+        data-en="From: Mount Lavinia"
+        data-ta="புறப்படும் இடம்: மவுண்ட் லவீனியா"
+        data-si="පිටත්වීම: ගල්කිස්ස">
+        From: Mount Lavinia
+    </p>
+
+    <p
+        data-en="To: Kankesanthurai (KKS)"
+        data-ta="சேருமிடம்: காங்கேசன்துறை (KKS)"
+        data-si="ගමනාන්තය: කන්කසන්තුරේ (KKS)">
+        To: Kankesanthurai (KKS)
+    </p>
+
+    <p
+        data-en="MLV Departure: 05:15 AM"
+        data-ta="மவுண்ட் லவீனியா புறப்படும் நேரம்: 05:15 AM"
+        data-si="ගල්කිස්සෙන් පිටත්වන වේලාව: 05:15 AM">
+        MLV Departure: 05:15 AM
+    </p>
+
+    <p
+        data-en="Fort Arrival: 05:39 AM"
+        data-ta="கொழும்பு கோட்டை வந்து சேரும் நேரம்: 05:39 AM"
+        data-si="කොළඹ කොටුවට ළඟාවන වේලාව: 05:39 AM">
+        Fort Arrival: 05:39 AM
+    </p>
+
+    <p
+        data-en="Fort Departure: 05:45 AM"
+        data-ta="கொழும்பு கோட்டையிலிருந்து புறப்படும் நேரம்: 05:45 AM"
+        data-si="කොළඹ කොටුවෙන් පිටත්වන වේලාව: 05:45 AM">
+        Fort Departure: 05:45 AM
+    </p>
+
+    <p
+        data-en="KKS Arrival: 12:14 PM"
+        data-ta="காங்கேசன்துறை வந்து சேரும் நேரம்: 12:14 PM"
+        data-si="කන්කසන්තුරේට ළඟාවන වේලාව: 12:14 PM">
+        KKS Arrival: 12:14 PM
+    </p>
+
+    <span
+        data-en="A/C Intercity"
+        data-ta="குளிரூட்டப்பட்ட நகரங்களுக்கு இடையிலான ரயில்"
+        data-si="වායුසමනය කළ නගරාන්තර දුම්රිය">
+        A/C Intercity
+    </span>
+
+    <button class="view-details" type="button"
+        data-en="View Details"
+        data-ta="விபரங்களைப் பார்க்க"
+        data-si="විස්තර බලන්න">
+        View Details
+    </button>
+
+</div>
+
+        <!-- JAFFNA NIGHT MAIL 4090 -->
+        
+<div class="schedule-card">
+
+    <h3
+        data-en="🚆 Jaffna Night Mail"
+        data-ta="🚆 யாழ்ப்பாண இரவு அஞ்சல் ரயில்"
+        data-si="🚆 යාපනය රාත්‍රී තැපැල් දුම්රිය">
+        🚆 Jaffna Night Mail
+    </h3>
+
+    <p
+        data-en="Train No: 4090"
+        data-ta="ரயில் இலக்கம்: 4090"
+        data-si="දුම්රිය අංකය: 4090">
+        Train No: 4090
+    </p>
+
+    <p
+        data-en="From: Kankesanthurai (KKS)"
+        data-ta="புறப்படும் இடம்: காங்கேசன்துறை (KKS)"
+        data-si="පිටත්වීම: කන්කසන්තුරේ (KKS)">
+        From: Kankesanthurai (KKS)
+    </p>
+
+    <p
+        data-en="To: Moratuwa (MRT)"
+        data-ta="சேருமிடம்: மொரட்டுவ (MRT)"
+        data-si="ගමනාන්තය: මොරටුව (MRT)">
+        To: Moratuwa (MRT)
+    </p>
+
+    <p
+        data-en="KKS Departure: 08:00 PM"
+        data-ta="காங்கேசன்துறை புறப்படும் நேரம்: 08:00 PM"
+        data-si="කන්කසන්තුරේ පිටත්වන වේලාව: 08:00 PM">
+        KKS Departure: 08:00 PM
+    </p>
+
+    <p
+        data-en="Fort Arrival: 04:44 AM"
+        data-ta="கொழும்பு கோட்டை வந்து சேரும் நேரம்: 04:44 AM"
+        data-si="කොළඹ කොටුවට ළඟාවන වේලාව: 04:44 AM">
+        Fort Arrival: 04:44 AM
+    </p>
+
+    <p
+        data-en="Fort Departure: 04:46 AM"
+        data-ta="கொழும்பு கோட்டையிலிருந்து புறப்படும் நேரம்: 04:46 AM"
+        data-si="කොළඹ කොටුවෙන් පිටත්වන වේලාව: 04:46 AM">
+        Fort Departure: 04:46 AM
+    </p>
+
+    <p
+        data-en="MRT Arrival: 05:24 AM"
+        data-ta="மொரட்டுவ வந்து சேரும் நேரம்: 05:24 AM"
+        data-si="මොරටුවට ළඟාවන වේලාව: 05:24 AM">
+        MRT Arrival: 05:24 AM
+    </p>
+
+    <span
+        data-en="Night Mail"
+        data-ta="இரவு அஞ்சல் ரயில்"
+        data-si="රාත්‍රී තැපැල් දුම්රිය">
+        Night Mail
+    </span>
+
+    <button class="view-details" type="button"
+        data-en="View Details"
+        data-ta="விபரங்களைப் பார்க்க"
+        data-si="විස්තර බලන්න">
+        View Details
+    </button>
+
+</div>
+
+
+        <!-- JAFFNA NIGHT MAIL 4089 -->
+        
+<div class="schedule-card">
+
+    <h3
+        data-en="🚆 Jaffna Night Mail"
+        data-ta="🚆 யாழ்ப்பாண இரவு அஞ்சல் ரயில்"
+        data-si="🚆 යාපනය රාත්‍රී තැපැල් දුම්රිය">
+        🚆 Jaffna Night Mail
+    </h3>
+
+    <p
+        data-en="Train No: 4089"
+        data-ta="ரயில் இலக்கம்: 4089"
+        data-si="දුම්රිය අංකය: 4089">
+        Train No: 4089
+    </p>
+
+    <p
+        data-en="From: Moratuwa (MRT)"
+        data-ta="புறப்படும் இடம்: மொரட்டுவ (MRT)"
+        data-si="පිටත්වීම: මොරටුව (MRT)">
+        From: Moratuwa (MRT)
+    </p>
+
+    <p
+        data-en="To: Kankesanthurai (KKS)"
+        data-ta="சேருமிடம்: காங்கேசன்துறை (KKS)"
+        data-si="ගමනාන්තය: කන්කසන්තුරේ (KKS)">
+        To: Kankesanthurai (KKS)
+    </p>
+
+    <p
+        data-en="MRT Departure: 06:55 PM"
+        data-ta="மொரட்டுவ புறப்படும் நேரம்: 06:55 PM"
+        data-si="මොරටුවෙන් පිටත්වන වේලාව: 06:55 PM">
+        MRT Departure: 06:55 PM
+    </p>
+
+    <p
+        data-en="Fort Arrival: 07:29 PM"
+        data-ta="கொழும்பு கோட்டை வந்து சேரும் நேரம்: 07:29 PM"
+        data-si="කොළඹ කොටුවට ළඟාවන වේලාව: 07:29 PM">
+        Fort Arrival: 07:29 PM
+    </p>
+
+    <p
+        data-en="Fort Departure: 08:00 PM"
+        data-ta="கொழும்பு கோட்டையிலிருந்து புறப்படும் நேரம்: 08:00 PM"
+        data-si="කොළඹ කොටුවෙන් පිටත්වන වේලාව: 08:00 PM">
+        Fort Departure: 08:00 PM
+    </p>
+
+    <p
+        data-en="KKS Arrival: 04:24 AM"
+        data-ta="காங்கேசன்துறை வந்து சேரும் நேரம்: 04:24 AM"
+        data-si="කන්කසන්තුරේට ළඟාවන වේලාව: 04:24 AM">
+        KKS Arrival: 04:24 AM
+    </p>
+
+    <span
+        data-en="Night Mail"
+        data-ta="இரவு அஞ்சல் ரயில்"
+        data-si="රාත්‍රී තැපැල් දුම්රිය">
+        Night Mail
+    </span>
+
+    <button class="view-details" type="button"
+        data-en="View Details"
+        data-ta="விபரங்களைப் பார்க்க"
+        data-si="විස්තර බලන්න">
+        View Details
+    </button>
+
+</div>
+
+
+    </div>
+
+</section>
+
+
+<!-- POPULAR RAILWAY STATIONS -->
+
+<section class="stations-section" id="stations">
+
+    <div class="stations-heading">
+
+        <h2
+            data-en="Popular Railway Stations"
+            data-ta="பிரபலமான ரயில் நிலையங்கள்"
+            data-si="ජනප්‍රිය දුම්රිය ස්ථාන">
+            Popular Railway Stations
+        </h2>
+
+        <p
+            data-en="Explore Beautiful Railway Destinations"
+            data-ta="அழகான ரயில் பயண இடங்களை ஆராயுங்கள்"
+            data-si="සුන්දර දුම්රිය ගමනාන්ත ගවේෂණය කරන්න">
+            Explore Beautiful Railway Destinations
+        </p>
+
+    </div>
+
+    <div class="stations-container">
+
+        <div class="station-card">
+
+    <img
+        src="images/colombo_fort_01.jpg"
+        alt="Colombo Fort Railway Station"
+        class="station-image">
+
+    <h3
+        data-en="Colombo Fort"
+        data-ta="கொழும்பு கோட்டை"
+        data-si="කොළඹ කොටුව">
+        Colombo Fort
+    </h3>
+
+    <p
+        data-en="Western Province"
+        data-ta="மேல் மாகாணம்"
+        data-si="බස්නාහිර පළාත">
+        Western Province
+    </p>
+
+    <button class="gallery-button"
+        onclick="openStationGallery('colombo-fort')"
+        data-en="View Gallery"
+        data-ta="புகைப்படங்களைப் பார்க்க"
+        data-si="ඡායාරූප බලන්න">
+        View Gallery
+    </button>
+    <button class="station-details-button"
+    onclick="openStationDetails('colombo-fort')"
+    data-en="View Station Details"
+    data-ta="நிலைய விவரங்களைப் பார்க்க"
+    data-si="දුම්රිය ස්ථානයේ විස්තර බලන්න">
+    View Station Details
+</button>
+
+
+</div>
+
+        <div class="station-card">
+
+    <img
+        src="image/kandy_01.jpg"
+        alt="Kandy Railway Station"
+        class="station-image">
+
+    <h3
+        data-en="Kandy"
+        data-ta="கண்டி"
+        data-si="මහනුවර">
+        Kandy
+    </h3>
+
+    <p
+        data-en="Central Province"
+        data-ta="மத்திய மாகாணம்"
+        data-si="මධ්‍යම පළාත">
+        Central Province
+    </p>
+
+    <button class="gallery-button"
+        onclick="openStationGallery('kandy')"
+        data-en="View Gallery"
+        data-ta="புகைப்படங்களைப் பார்க்க"
+        data-si="ඡායාරූප බලන්න">
+        View Gallery
+    </button>
+    <button class="station-details-button"
+    onclick="openStationDetails('kandy')"
+    data-en="View Station Details"
+    data-ta="நிலைய விவரங்களைப் பார்க்க"
+    data-si="දුම්රිය ස්ථානයේ විස්තර බලන්න">
+    View Station Details
+</button>
+
+</div>
+
+        <div class="station-card">
+
+    <img
+        src="image/ella_01.jpg"
+        alt="Ella Railway Station"
+        class="station-image">
+
+    <h3
+        data-en="Ella"
+        data-ta="எல்ல"
+        data-si="ඇල්ල">
+        Ella
+    </h3>
+
+    <p
+        data-en="Uva Province"
+        data-ta="ஊவா மாகாணம்"
+        data-si="ඌව පළාත">
+        Uva Province
+    </p>
+
+    <button class="gallery-button"
+        onclick="openStationGallery('ella')"
+        data-en="View Gallery"
+        data-ta="புகைப்படங்களைப் பார்க்க"
+        data-si="ඡායාරූப බලන්න">
+        View Gallery
+    </button>
+    <button class="station-details-button"
+    onclick="openStationDetails('ella')"
+    data-en="View Station Details"
+    data-ta="நிலைய விவரங்களைப் பார்க்க"
+    data-si="දුම්රිය ස්ථානයේ විස්තර බලන්න">
+    View Station Details
+</button>
+
+</div>
+
+        <div class="station-card">
+
+    <img
+        src="image/jaffna_01.jpg"
+        alt="Jaffna Railway Station"
+        class="station-image">
+
+    <h3
+        data-en="Jaffna"
+        data-ta="யாழ்ப்பாணம்"
+        data-si="යාපනය">
+        Jaffna
+    </h3>
+
+    <p
+        data-en="Northern Province"
+        data-ta="வட மாகாணம்"
+        data-si="උතුරු පළාත">
+        Northern Province
+    </p>
+
+    <button class="gallery-button"
+        onclick="openStationGallery('jaffna')"
+        data-en="View Gallery"
+        data-ta="புகைப்படங்களைப் பார்க்க"
+        data-si="ඡායාරූප බලන්න">
+        View Gallery
+    </button>
+   <button class="station-details-button"
+    onclick="openStationDetails('jaffna')"
+    data-en="View Station Details"
+    data-ta="நிலைய விவரங்களைப் பார்க்க"
+    data-si="දුම්රිය ස්ථානයේ විස්තර බලන්න">
+    View Station Details
+</button>
+
+</div>
+
+    </div>
+
+</section>
+<!-- STATION PHOTO GALLERY -->
+
+<div id="stationGallery" class="gallery-modal">
+
+    <div class="gallery-content">
+
+        <button class="gallery-close"
+            onclick="closeStationGallery()">
+            &times;
+        </button>
+
+        <h2 id="galleryTitle">Colombo Fort</h2>
+
+        <div id="galleryPhotos" class="gallery-photos">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- STATION DETAILS MODAL -->
+
+<div id="stationDetailsModal" class="gallery-modal">
+
+    <div class="gallery-content">
+
+        <button class="gallery-close"
+            onclick="closeStationDetails()">
+            &times;
+        </button>
+
+        <h2 id="stationDetailsTitle">
+            Station Details
+        </h2>
+
+        <div id="stationDetailsContent">
+
+        </div>
+
+    </div>
+
+</div>
+<!-- STATION TELEPHONE DIRECTORY -->
+
+<section class="directory-section" id="directory">
+
+    <h2>Railway Station Telephone Directory</h2>
+
+    <p>Find Railway Station Contact Numbers</p>
+
+    <div class="directory-search">
+
+    <input
+        type="text"
+        id="stationSearch"
+        placeholder="Search Railway Station..."
+    >
+
+    <select id="lineFilter">
+        <option value="all">All Railway Lines</option>
+        <option value="Northern Line">Northern Line</option>
+        <option value="Talaimannar Line">Talaimannar Line</option>
+    </select>
+
+</div>
+
+    <div id="directoryResults">
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="features-section">
+
+
+    <h2>Why Choose Sri Lanka Railways?</h2>
+
+    <p>Enjoy a Comfortable and Memorable Journey</p>
+
+    <div class="features-container">
+
+        <div class="feature-card">
+            <h3>🚆 Comfortable Travel</h3>
+            <p>Enjoy relaxing journeys across beautiful Sri Lanka.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🌄 Scenic Routes</h3>
+            <p>Discover breathtaking views along the railway lines.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🎫 Easy Journey Planning</h3>
+            <p>Plan your railway journey with ease.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="ticket-section" id="ticket-prices">
+
+<h2>RESERVATION TICKET FARE</h2>
+
+    <p>Choose the Right Class for Your Journey</p>
+
+    <div class="ticket-container">
+
+        <div class="ticket-card" id="firstClassCard">
+            <h3>🥇 First Class</h3>
+            <p>Comfortable travel experience</p>
+            <button type="button" id="premiumClassButton">
+    Premium Class
+</button>
+        </div>
+
+        <div class="ticket-card">
+            <h3>🥈 Second Class</h3>
+            <p>Comfortable standard seating</p>
+            <span>Standard Class</span>
+        </div>
+
+        <div class="ticket-card">
+            <h3>🥉 Third Class</h3>
+            <p>Budget-friendly travel option</p>
+            <span>Economy Class</span>
+        </div>
+
+    </div>
+
+    <p class="ticket-note">
+        Please check official railway sources for current ticket fares.
+    </p>
+
+</section>
+
+
+<!-- RESERVATION FARE SECTION -->
+
+<section class="reservation-fare" id="reservation-fare">
+
+  <h2>RESERVATION TICKET FARE</h2>
+ 
+ <div class="fare-inputs">
+
+        <!-- FROM STATION -->
+
+        <div class="input-group">
+
+            <label>From Station</label>
+
+            <select id="fareFrom">
+
+    <option value=""
+        data-en="Select Departure"
+        data-ta="புறப்படும் நிலையத்தைத் தேர்ந்தெடுக்கவும்"
+        data-si="පිටත්වන ස්ථානය තෝරන්න">
+        Select Departure
+    </option>
+
+    <option value="Colombo Fort" data-en="Colombo Fort" data-ta="கொழும்பு கோட்டை" data-si="කොළඹ කොටුව">Colombo Fort</option>
+
+    <option value="Gampaha" data-en="Gampaha" data-ta="கம்பஹா" data-si="ගම්පහ">Gampaha</option>
+
+    <option value="Polgahawela" data-en="Polgahawela" data-ta="பொல்கஹவெல" data-si="පොල්ගහවෙල">Polgahawela</option>
+
+    <option value="Maho" data-en="Maho" data-ta="மஹோ" data-si="මහව">Maho</option>
+
+    <option value="Kurunegala" data-en="Kurunegala" data-ta="குருநாகல்" data-si="කුරුණෑගල">Kurunegala</option>
+
+    <option value="Anuradhapura" data-en="Anuradhapura" data-ta="அனுராதபுரம்" data-si="අනුරාධපුරය">Anuradhapura</option>
+
+    <option value="Madawachchiya" data-en="Madawachchiya" data-ta="மதவாச்சி" data-si="මැදවච්චිය">Madawachchiya</option>
+
+    <option value="Cheddikulam" data-en="Cheddikulam" data-ta="செட்டிகுளம்" data-si="චෙඩ්ඩිකුලම්">Cheddikulam</option>
+
+    <option value="Madu Road" data-en="Madu Road" data-ta="மடு வீதி" data-si="මඩු පාර">Madu Road</option>
+
+    <option value="Murunkan" data-en="Murunkan" data-ta="முருங்கன்" data-si="මුරුන්කන්">Murunkan</option>
+
+    <option value="Mannar" data-en="Mannar" data-ta="மன்னார்" data-si="මන්නාරම">Mannar</option>
+
+    <option value="Pesalai" data-en="Pesalai" data-ta="பேசாலை" data-si="පේසාලේ">Pesalai</option>
+
+    <option value="Talaimannar" data-en="Talaimannar" data-ta="தலைமன்னார்" data-si="තලෙයිමන්නාරම">Talaimannar</option>
+
+    <option value="Talaimannar Pier" data-en="Talaimannar Pier" data-ta="தலைமன்னார் இறங்குதுறை" data-si="තලෙයිමන්නාරම තොටුපළ">Talaimannar Pier</option>
+
+    <option value="Vavuniya" data-en="Vavuniya" data-ta="வவுனியா" data-si="වවුනියාව">Vavuniya</option>
+
+    <option value="Kilinochchi" data-en="Kilinochchi" data-ta="கிளிநொச்சி" data-si="කිලිනොච්චිය">Kilinochchi</option>
+
+    <option value="Kodikamam" data-en="Kodikamam" data-ta="கொடிகாமம்" data-si="කොඩිකාමම්">Kodikamam</option>
+
+    <option value="Chavakachcheri" data-en="Chavakachcheri" data-ta="சாவகச்சேரி" data-si="චාවකච්චේරිය">Chavakachcheri</option>
+
+    <option value="Jaffna" data-en="Jaffna" data-ta="யாழ்ப்பாணம்" data-si="යාපනය">Jaffna</option>
+
+    <option value="Kankesanthurai" data-en="Kankesanthurai (KKS)" data-ta="காங்கேசன்துறை (KKS)" data-si="කන්කසන්තුරේ (KKS)">Kankesanthurai (KKS)</option>
+
+    <option value="Mount Lavinia" data-en="Mount Lavinia" data-ta="கல்கிசை" data-si="ගල්කිස්ස">Mount Lavinia</option>
+
+    <option value="Moratuwa" data-en="Moratuwa" data-ta="மொரட்டுவ" data-si="මොරටුව">Moratuwa</option>
+
+</select>
+
+        </div>
+
+        <!-- TO STATION -->
+
+        <div class="input-group">
+
+            <label>To Station</label>
+
+           <select id="fareTo">
+
+    <option value=""
+        data-en="Select Destination"
+        data-ta="சேரும் நிலையத்தைத் தேர்ந்தெடுக்கவும்"
+        data-si="ගමනාන්ත ස්ථානය තෝරන්න">
+        Select Destination
+    </option>
+
+    <option value="Colombo Fort" data-en="Colombo Fort" data-ta="கொழும்பு கோட்டை" data-si="කොළඹ කොටුව">Colombo Fort</option>
+
+    <option value="Gampaha" data-en="Gampaha" data-ta="கம்பஹா" data-si="ගම්පහ">Gampaha</option>
+
+    <option value="Polgahawela" data-en="Polgahawela" data-ta="பொல்கஹவெல" data-si="පොල්ගහවෙල">Polgahawela</option>
+
+    <option value="Maho" data-en="Maho" data-ta="மஹோ" data-si="මහව">Maho</option>
+
+    <option value="Kurunegala" data-en="Kurunegala" data-ta="குருநாகல்" data-si="කුරුණෑගල">Kurunegala</option>
+
+    <option value="Anuradhapura" data-en="Anuradhapura" data-ta="அனுராதபுரம்" data-si="අනුරාධපුරය">Anuradhapura</option>
+
+    <option value="Madawachchiya" data-en="Madawachchiya" data-ta="மதவாச்சி" data-si="මැදවච්චිය">Madawachchiya</option>
+
+    <option value="Cheddikulam" data-en="Cheddikulam" data-ta="செட்டிகுளம்" data-si="චෙඩ්ඩිකුලම්">Cheddikulam</option>
+
+    <option value="Madu Road" data-en="Madu Road" data-ta="மடு வீதி" data-si="මඩු පාර">Madu Road</option>
+
+    <option value="Murunkan" data-en="Murunkan" data-ta="முருங்கன்" data-si="මුරුන්කන්">Murunkan</option>
+
+    <option value="Mannar" data-en="Mannar" data-ta="மன்னார்" data-si="මන්නාරම">Mannar</option>
+
+    <option value="Pesalai" data-en="Pesalai" data-ta="பேசாலை" data-si="පේසාලේ">Pesalai</option>
+
+    <option value="Talaimannar" data-en="Talaimannar" data-ta="தலைமன்னார்" data-si="තලෙයිමන්නාරම">Talaimannar</option>
+
+    <option value="Talaimannar Pier" data-en="Talaimannar Pier" data-ta="தலைமன்னார் இறங்குதுறை" data-si="තලෙයිමන්නාරම තොටුපළ">Talaimannar Pier</option>
+
+    <option value="Vavuniya" data-en="Vavuniya" data-ta="வவுனியா" data-si="වවුනියාව">Vavuniya</option>
+
+    <option value="Kilinochchi" data-en="Kilinochchi" data-ta="கிளிநொச்சி" data-si="කිලිනොච්චිය">Kilinochchi</option>
+
+    <option value="Kodikamam" data-en="Kodikamam" data-ta="கொடிகாமம்" data-si="කොඩිකාමම්">Kodikamam</option>
+
+    <option value="Chavakachcheri" data-en="Chavakachcheri" data-ta="சாவகச்சேரி" data-si="චාවකච්චේරිය">Chavakachcheri</option>
+
+    <option value="Jaffna" data-en="Jaffna" data-ta="யாழ்ப்பாணம்" data-si="යාපනය">Jaffna</option>
+
+    <option value="Kankesanthurai" data-en="Kankesanthurai (KKS)" data-ta="காங்கேசன்துறை (KKS)" data-si="කන්කසන්තුරේ (KKS)">Kankesanthurai (KKS)</option>
+
+    <option value="Mount Lavinia" data-en="Mount Lavinia" data-ta="கல்கிசை" data-si="ගල්කිස්ස">Mount Lavinia</option>
+
+    <option value="Moratuwa" data-en="Moratuwa" data-ta="மொரட்டுவ" data-si="මොරටුව">Moratuwa</option>
+
+</select>
+
+        </div>
+
+    </div>
+
+    <!-- FARE RESULT -->
+
+   <button type="button" id="calculateFareButton" class="calculate-fare-btn">
+    Calculate Fare
+</button>
+    <div class="fare-result" id="fare-result"></div>
+
+</section>
+
+    
+<!-- CONTACT SECTION -->
+
+<section class="contact-section" id="contact-form">
+
+    <h2>Contact Us</h2>
+
+    <p>We Are Here to Help You</p>
+
+    <div class="contact-container">
+
+       
+<form class="contact-form" id="contactForm">
+
+    <input
+        type="text"
+        id="passengerName"
+        placeholder="Your Name"
+        required>
+
+    <input
+        type="email"
+        id="passengerEmail"
+        placeholder="Your Email"
+        required>
+
+    <input
+        type="text"
+        id="passengerSubject"
+        placeholder="Subject"
+        required>
+
+    <textarea
+        id="passengerMessage"
+        placeholder="Your Message"
+        rows="5"
+        required></textarea>
+
+    <button type="submit" id="sendMessageButton">
+        Send Message
+    </button>
+
+    <p id="contactStatus"></p>
+
+</form>
+
+    </div>
+
+</section>
+<!-- FOOTER SECTION -->
+
+<footer class="footer" id="contact">
+
+    <h2>🚆 Sri Lanka Railways</h2>
+
+    <p>Your Journey, Our Priority</p>
+
+    <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#schedule">Train Schedule</a>
+    <a href="#stations">Stations</a>
+    <a href="#contact-form">Contact</a>
+</div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Sri Lanka Railways. All Rights Reserved.</p>
+    </div>
+
+</footer>
+<div class="train-modal" id="trainModal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 id="modalTitle">Train Details</h2>
+        <div id="modalDetails"></div>
+    </div>
+</div>
+    <!-- SUPABASE LIBRARY -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- EXISTING WEBSITE JAVASCRIPT -->
+<script src="script.js"></script>
+
+<!-- CONTACT FORM CONNECTION -->
+<script src="contact-supabase.js"></script>
+
+</body>
+</html>
